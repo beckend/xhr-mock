@@ -100,7 +100,7 @@ describe('debug', () => {
     mock.reset();
   });
 
-  afterEach(() => {
+  afterAll(() => {
     mock.teardown();
   });
 
@@ -133,6 +133,7 @@ describe('debug', () => {
     };
 
     assert.mock.calls.forEach(([{payload, state}]) => {
+      console.log(state);
       switch (state) {
         case 'START':
           expect(payload).toBeTruthy();
