@@ -39,8 +39,6 @@ const fetchXHR = (url, opts: any = {}) =>
     const handleErrorTimeout = createCommonErrorHandler('TIMEOUT');
 
     const handleLoad = evt => {
-      response = evt.target.responseText;
-
       assert({
         payload: response,
         state: 'FULFILLED'
